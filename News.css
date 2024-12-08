@@ -1,0 +1,284 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #5a9e00;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    background-color: #8a2d2d;
+    color: #fcd600;
+}
+
+header h1 {
+    font-size: 2em;
+    color: #fcd600;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.menu-bar {
+    display: flex;
+    list-style: none;
+    gap: 1em;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-bar li {
+    display: inline;
+}
+
+.menu-bar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    transition: background 0.3s;
+}
+
+.menu-bar a:hover {
+    background-color: #e00000;
+}
+
+/* Styling for login and register buttons in the header */
+.header-right .user-menu button {
+    padding: 0.5em 1em;
+    font-size: 1em;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for login and register buttons in the header */
+.header-right .user-menu button:hover {
+    background-color: #555;
+    transform: translateY(-2px); /* Adds slight lift */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adds shadow for depth */
+}
+
+
+
+/* Center the search bar with header-right */
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input[type="text"] {
+    padding: 0.5em;
+    font-size: 1em;
+    border: 2px solid #000000;
+    border-radius: 10px 0 0 10px;
+    width: 250px;
+}
+
+.search-bar button {
+    padding: 0.5em;
+    font-size: 1em;
+    color: #fff;
+    background-color: #333;
+    border: 2px solid #333;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #555;
+}
+
+/* Styling the news container */
+#news-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    padding: 1em;
+    justify-content: center;
+}
+
+.news-card {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s;
+    border: 2px solid #000000;
+    border-radius: 10px;
+}
+
+.news-card:hover {
+    transform: scale(1.05);
+}
+
+.news-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-card .content {
+    padding: 1em;
+}
+
+.news-card h2 {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+}
+
+.news-card p {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+}
+
+.modal-content h2 {
+    margin-bottom: 1em;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 0.5em;
+    margin: 0.5em 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modal-content button {
+    width: 100%;
+    padding: 0.5em;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: #555;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: flex-start; /* Align items to the left */
+    }
+
+    .menu-bar {
+        flex-direction: column; /* Stack menu items vertically */
+        width: 100%; /* Full width */
+    }
+
+    .menu-bar li {
+        margin: 0.5em 0; /* Space between menu items */
+    }
+
+    .search-bar {
+        width: 100%; /* Full width for search bar */
+        margin: 1em 0; /* Margin above and below */
+    }
+
+    .search-bar input[type="text"] {
+        width: calc(100% - 50px); /* Adjust width for button */
+    }
+
+    .search-bar button {
+        width: 50px; /* Fixed width for button */
+    }
+
+    .user-actions {
+        flex-direction: column; /* Stack user actions vertically */
+        align-items: flex-start; /* Align items to the left */
+    }
+
+    .user-actions button {
+        width: 100%; /* Full width buttons */
+        margin: 0.5em 0; /* Space between buttons */
+    }
+
+    #news-container {
+        flex-direction: column; /* Stack news cards vertically */
+        align-items: center; /* Center align cards */
+    }
+
+    .news-card {
+        width: 100%; /* Full width for cards */
+        max-width: 300px; /* Limit maximum width */
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 0.5em; /* Reduce padding in header */
+    }
+
+    header h1 {
+        font-size: 1.5em; /* Smaller font size for the title */
+    }
+
+    .menu-bar a {
+        padding: 0.5em; /* Smaller padding for menu items */
+    }
+
+    .search-bar input[type="text"], .search-bar button {
+        font-size: 0.9em; /* Slightly smaller font size */
+    }
+
+    .news-card h2 {
+        font-size: 1.1em; /* Smaller font size for news titles */
+    }
+
+    .news-card p {
+        font-size: 0.9em; /* Smaller font size for news descriptions */
+    }
+}
